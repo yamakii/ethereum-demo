@@ -16,17 +16,19 @@
 
 <body>
     <div class="container-fluid">
-        <h3>Plan</h3>
-        <div class="row">
-            <div class="col-xs-2">Time:</div>
-            <div class="col-xs-10">2017-01-01 12:00</div>
-        </div><br>
-        <div class="row">
-            <div class="col-xs-2">Place:</div>
-            <div class="col-xs-10">Shibuya</div>
-        </div><br>
-        <div class="row">
-            <div class="col-xs-12"><input type=submit id="arrived" class="btn btn-info" value="着きました" onclick="arrived()"></input>
+        <h2>Tour plan</h2><br>
+        <h4>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-2">Time:</div>
+                <div class="col-xs-9">2017-01-01 12:00</div>
+            </div><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-2">Place:</div>
+                <div class="col-xs-9">Shibuya</div>
+            </div><br>
+        </h4>
+        <div class="row text-center">
+            <div class="col-xs-12"><input type=submit id="arrived" class="btn btn-success" value="着きました" onclick="location.href='tour_met.html'"></input>
             </div>
         </div>
     </div>
