@@ -1,3 +1,7 @@
+pragma solidity ^0.4.2;
+
+import "ConvertLib.sol";
+
 contract Tourium {
     address owner;
     address contractor;
