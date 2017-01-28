@@ -1,19 +1,28 @@
+pragma solidity ^0.4.8;
+
 contract Tourium {
+    mapping (address => uint) balances;
     address owner;
     address contractor;
-    uint amount;
-
-    event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
     function Tourium() {
         owner = tx.origin;
     }
 
-    function deposit(address _contractor, uint _amount) {
+    function deposit(address _contractor, uint amount) returns(bool sufficient) {
+        if (msg.sender != owner) return false;
+        balances[msg.sender] += amount;
         contractor = _contractor;
-        amount = _amount;
+        return true;
     }
 
-    function payback() {
+    function payback(uint amount) returns(bool sufficient) {
+        if (msg.sender != contractor) return false;
+        balances[owner] -= amount;
+        return true;
+    }
+
+    function getBalance(address addr) returns(uint) {
+        return balances[addr];
     }
 }
