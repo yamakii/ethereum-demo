@@ -3,6 +3,10 @@
 ## How to run
 
 ```
-testrpc -m "10~12単語程度の文字列をダブルクオーテーション付きで" &
-truffle migrate && truffle serve
+$ node -v
+v7.4.0
+
+$ testrpc -m "MetaMaskの導入時に表示される10~12単語程度の文字列をダブルクオーテーション付きで"
+
+$ truffle migrate && truffle serve
 ```

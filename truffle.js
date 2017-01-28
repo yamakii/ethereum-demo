@@ -5,6 +5,8 @@ module.exports = {
         "tourist_list.html": "tourist_list.html",
         "new_guide.html": "new_guide.html",
         "new_tourist.html": "new_tourist.html",
+        "matching.html": "matching.html",
+        "contracted.html": "contracted.html",
         "tour_arrived.html": "tour_arrived.html",
         "tour_met.html": "tour_met.html",
         "app.js": [
