@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>feedback_guide</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="./app.css" rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>FeedBack to your guide</h2><br>
+        <form name="fbguide">
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11">
+                    <b>満足度</b>
+                </div>
+            </div>
+            <div class="row center-block">
+                <div class="col-xs-offset-1 col-xs-2"><label for="satisfy1" class="control-label" value="1">１</label><input type="radio" id="satisfy1" name="satisfy" /></div>
+                <div class="col-xs-2"><label for="satisfy2" class="control-label">２</label><input type="radio" id="satisfy2" name="satisfy" value="2" /></div>
+                <div class="col-xs-2"><label for="satisfy3" class="control-label">３</label><input type="radio" id="satisfy3" name="satisfy" value="3" /></div>
+                <div class="col-xs-2"><label for="satisfy4" class="control-label">４</label><input type="radio" id="satisfy4" name="satisfy" value="4" /></div>
+                <div class="col-xs-2"><label for="satisfy5" class="control-label">５</label><input type="radio" id="satisfy5" name="satisfy" value="5" /></div>
+            </div><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11">
+                    <label for="comment" class="control-label">評価コメント</label>
+                </div>
+            </div>
+            <div class="row center-block">
+                <div class="col-xs-offset-1 col-xs-10">
+                    <textarea name="comment" id="comment" rows="8" placeholder="評価コメントを書いてください" class="form-control"></textarea>
+                    <p class="help-block">※500文字以内</p>
+                </div>
+            </div><br>
+            <div class="row text-center">
+                <div class="col-xs-12"><input type=submit id="feedbackGuide" class="btn btn-success" value="評価を送信する" onclick="feedbackGuide(this.form.satisfy.value, this.form.comment.value)"></input>
+                </div>
+            </div>
+        </form><br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
