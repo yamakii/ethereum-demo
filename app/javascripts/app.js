@@ -15,7 +15,7 @@ window.onload = function() {
       return;
     }
     accounts = accs;
-    account = "0x41c404D65a599a62e92F1f8ca4C1634203ba100A";
+    account = "0xab4f23bc4f4a75ff635b630e11456581902f95b9";
     amount = web3.toWei('1', 'ether');
   });
 }
@@ -30,7 +30,7 @@ function deposit() {
   console.log("Transaction complete!");
   console.log("Send 1 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
-  tourium.deposit.sendTransaction({from: account, value: amount}).then(function(balance) {
+  tourium.deposit.sendTransaction('0x017ce96c3b8234c7de5e48aae50c2c74ef1086aa', {from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
     setTimeout(function() { location.href='/contracted.html' } , 5000)
   }).catch(function(e) {
@@ -46,7 +46,7 @@ function payback() {
 
   console.log("Receive 1 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
-  tourium.payback({from: account}).then(function() {
+  tourium.payback.sendTransaction({from: account, gas: 300000}).then(function() {
     console.log("Transaction complete!");
     setTimeout(function() { location.href='/thankyou.html' } , 5000)
   }).catch(function(e) {
