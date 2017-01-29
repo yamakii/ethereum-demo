@@ -20,9 +20,8 @@ window.onload = function() {
   });
 }
 
-function deposit(receiver) {
+function deposit() {
   var tourium = Tourium.deployed();
-  reciever = arguments[0];
 
   var message =  document.getElementById("comment").value;
   console.log("Send message to matching partner");
@@ -31,7 +30,7 @@ function deposit(receiver) {
   console.log("Transaction complete!");
   console.log("Send 1 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
-  tourium.deposit.sendTransaction(reciever, {from: account, value: amount}).then(function(balance) {
+  tourium.deposit.sendTransaction({from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
     setTimeout(function() { location.href='/contracted.html' } , 5000)
   }).catch(function(e) {
