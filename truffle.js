@@ -9,6 +9,7 @@ module.exports = {
         "contracted.html": "contracted.html",
         "tour_arrived.html": "tour_arrived.html",
         "tour_met.html": "tour_met.html",
+        "feedback_list.html": "feedback_list.html",
         "feedback_guide.html": "feedback_guide.html",
         "feedback_tourist.html": "feedback_tourist.html",
         "app.js": [

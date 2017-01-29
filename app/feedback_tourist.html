@@ -15,8 +15,22 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h2>FeedBack to your tourist</h2><br>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+            <li role="presentation"><a href="./guide_list.html">Guide</a></li>
+            <li role="presentation"><a href="./tourist_list.html">Tourist</a></li>
+            <li role="presentation"><a href="./tour_arrived.html">Tour</a></li>
+            <li role="presentation" class="active"><a href="./feedback_list.html">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+
+        <h1 class="header">FeedBack to your tourist</h1>
+        <br/>
+
         <form name="fbtourist">
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-11">
@@ -46,7 +60,11 @@
                     <input type=submit id="feedbackTourist" class="btn btn-success" value="評価を送信する" onclick="feedbackTourist(this.form.satisfy.value, this.form.comment.value)"></input>
                 </div>
             </div>
-        </form><br>
+        </form>
+        <br/>
+      <footer class="footer">
+        <p>&copy; 2016 Tourium.jp</p>
+      </footer>
     </div>
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
