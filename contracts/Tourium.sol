@@ -1,7 +1,6 @@
 pragma solidity ^0.4.2;
 
 contract Tourium {
-    mapping (address => uint) balances;
     address owner;
     address contractor;
 
@@ -10,6 +9,7 @@ contract Tourium {
     }
 
     function deposit(address _contractor) payable returns(bool sufficient) {
+        if (msg.sender != owner) return false;
         contractor = _contractor;
         return true;
     }
@@ -17,9 +17,5 @@ contract Tourium {
     function payback() returns(bool sufficient) {
         if (msg.sender != contractor) return false;
         return owner.send(this.balance);
-    }
-
-    function getBalance() returns(uint) {
-        return this.balance;
     }
 }
