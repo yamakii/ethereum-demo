@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,56 +17,57 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link href="./app.css" rel='stylesheet' type='text/css'>
-  </head>
+</head>
 
-  <body>
+<body>
 
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-            <li role="presentation"><a href="./guide_list.html">Guide</a></li>
-            <li role="presentation"><a href="./tourist_list.html">Tourist</a></li>
-            <li role="presentation"><a href="./tour_arrived.html">Tour</a></li>
-            <li role="presentation"><a href="./feedback_list.html">Feedback</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                    <li role="presentation"><a href="./guide_list.html">Guide</a></li>
+                    <li role="presentation"><a href="./tourist_list.html">Tourist</a></li>
+                    <li role="presentation"><a href="./tour_arrived.html">Tour</a></li>
+                    <li role="presentation"><a href="./feedback_list.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
 
-      <h1 class="header">Matching</h1>
+        <h1 class="header">Matching</h1>
 
-      <h2>Itinerary</h2>
-      <ol>
-        <li>hoge</li>
-        <li>hoge</li>
-        <li>hoge</li>
-      </ol>
+        <h2>Itinerary</h2>
+        <ol>
+            <li>Time:2017-01-01 12:00</li>
+            <li>Place:Shibuya</li>
+            <li>Tourist:Alice</li>
+            <li>Guide:Bob</li>
+        </ol>
 
-      <h2>Message</h2>
-      <div class="form-group">
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-      </div>
+        <h2>Message</h2>
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
 
-      <p>
-        <a class="btn btn-lg btn-success btn-block" role="button"
-            onclick="deposit('0x41c404D65a599a62e92F1f8ca4C1634203ba100A')">
+        <p>
+            <a class="btn btn-lg btn-success btn-block" role="button" onclick="deposit('0x41c404D65a599a62e92F1f8ca4C1634203ba100A')">
           Contract!
         </a>
-      </p>
-      <div class="alert alert-warning">
-        <p><strong>Contractするとどうなる？</strong></p>
-        <p>Contractすると、時価で<strong>$10</strong>相当のあなたのETHが Tourium の貯金箱に預けられます.</p>
-        <p>これはドタキャンを防ぐためのもので、正しい時間と場所に集合して、当サイトにてフィードバックを記入して頂ければ、預けたETHは、運営手数料10%を引いた上で戻ってきます. </p>
-        <p><a href="#" class="alert-link">(詳しくはこちら)</a></p>
-      </div>
+        </p>
+        <div class="alert alert-warning">
+            <p><strong>Contractするとどうなる？</strong></p>
+            <p>Contractすると、時価で<strong>$10</strong>相当のあなたのETHが Tourium の貯金箱に預けられます.</p>
+            <p>これはドタキャンを防ぐためのもので、正しい時間と場所に集合して、当サイトにてフィードバックを記入して頂ければ、預けたETHは、運営手数料10%を引いた上で戻ってきます. </p>
+            <p><a href="#" class="alert-link">(詳しくはこちら)</a></p>
+        </div>
 
-      <br/>
-      <footer class="footer">
-        <p>&copy; 2016 Tourium.jp</p>
-      </footer>
+        <br/>
+        <footer class="footer">
+            <p>&copy; 2016 Tourium.jp</p>
+        </footer>
 
-    </div> <!-- /container -->
+    </div>
+    <!-- /container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -73,5 +75,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="./app.js"></script>
-  </body>
+</body>
+
 </html>
