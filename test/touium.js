@@ -19,7 +19,7 @@ contract('Tourium', function(accounts) {
             return eth.getBalance(sut.address);
         }).then(function(balance) {
             assert.equal(web3.fromWei(balance, 'ether') , '2', "Amount wasn't correctly taken from the sender");
-            return sut.payback({from: accounts[1]});
+            return sut.payback({from: accounts[0]});
         }).then(function() {
             return eth.getBalance(sut.address);
         }).then(function(balance) {
