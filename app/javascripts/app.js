@@ -1,39 +1,8 @@
+//var util = require('ethereumjs-util')
 var accounts;
 var account;
-
-function setStatus(message) {
-  var status = document.getElementById("status");
-  status.innerHTML = message;
-};
-
-function refreshBalance() {
-  var meta = MetaCoin.deployed();
-
-  meta.getBalance.call(account, {from: account}).then(function(value) {
-    var balance_element = document.getElementById("balance");
-    balance_element.innerHTML = value.valueOf();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error getting balance; see log.");
-  });
-};
-
-function sendCoin() {
-  var meta = MetaCoin.deployed();
-
-  var amount = parseInt(document.getElementById("amount").value);
-  var receiver = document.getElementById("receiver").value;
-
-  setStatus("Initiating transaction... (please wait)");
-
-  meta.sendCoin(receiver, amount, {from: account}).then(function() {
-    setStatus("Transaction complete!");
-    refreshBalance();
-  }).catch(function(e) {
-    console.log(e);
-    setStatus("Error sending coin; see log.");
-  });
-};
+var amount = 100;
+var tourium;
 
 window.onload = function() {
   web3.eth.getAccounts(function(err, accs) {
@@ -46,10 +15,43 @@ window.onload = function() {
       alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
       return;
     }
-
     accounts = accs;
     account = accounts[0];
-
-    refreshBalance();
+    tourium = Tourium.new();
   });
 }
+
+function setStatus(message) {
+  var status = document.getElementById("status");
+  status.innerHTML = message;
+};
+
+function deposit(receiver) {
+
+  setStatus("Initiating transaction... (please wait)");
+
+  tourium.deposit.call(receiver, amount, {from: account}).then(function(balance) {
+    var value = tourium.getBalance.call(account).value;
+    var balance_element = document.getElementById("balance");
+    balance_element.innerHTML = value;
+    setStatus("Transaction complete!");
+  }).catch(function(e) {
+    console.log(e);
+    setStatus("Error sending coin; see log.");
+  });
+};
+
+function payback() {
+  setStatus("Initiating transaction... (please wait)");
+
+  tourium.payback(amount, {from: account}).then(function() {
+    value = tourium.getBalance.call(account);
+    var balance_element = document.getElementById("balance");
+    balance_element.innerHTML = value;
+    setStatus("Transaction complete!");
+  }).catch(function(e) {
+    console.log(e);
+    setStatus("Error sending coin; see log.");
+  });
+};
+
