@@ -25,16 +25,15 @@ function deposit(receiver) {
   reciever = arguments[0];
 
   var message =  document.getElementById("comment").value;
-  console.log("Send 10 work to deposit wallet");
+  console.log("Send message to matching partner");
   console.log("Initiating transaction... (please wait)");
 
   console.log("Transaction complete!");
-  console.log("Send message to matching partner");
-  console.log("Message:");
-  console.log(message)
+  console.log("Send 10 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
   tourium.deposit.sendTransaction(reciever, {from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
+    setTimeout(function() { location.href='/contracted.html' } , 5000)
   }).catch(function(e) {
     console.log("Error sending coin; see log.");
   });
@@ -42,18 +41,17 @@ function deposit(receiver) {
 
 function payback() {
   var tourium = Tourium.deployed();
-  console.log("Receive 10 work to deposit wallet");
+  console.log("Send feedback message from matching partner");
   console.log("Initiating transaction... (please wait)");
   console.log("Transaction complete!");
-  console.log("Send message to matching partner");
-  console.log("Message:");
-  console.log(message)
-  console.log("Initiating transaction... (please wait)");
 
-  tourium.payback.sendTransaction(reciever, {from: account, value: amount}).then(function() {
+  console.log("Receive 1 ETH to deposit wallet");
+  console.log("Initiating transaction... (please wait)");
+  tourium.payback({from: account}).then(function() {
     console.log("Transaction complete!");
+    setTimeout(function() { location.href='/thankyou.html' } , 5000)
   }).catch(function(e) {
-    cosole.log("Error sending coin; see log.");
+    console.log("Error sending coin; see log.");
   });
 };
 
