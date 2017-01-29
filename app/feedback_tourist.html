@@ -28,7 +28,7 @@
             </nav>
         </div>
 
-        <h2 class="header">Feedback to your tourist</h2>
+        <h2 class="header">Feedback to your tour</h2>
         <br/>
 
         <form name="fbtourist">
@@ -46,18 +46,37 @@
             </div><br>
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-11">
-                    <label for="comment" class="control-label">評価コメント</label>
+                    <label for="good" class="control-label">良かった点</label>
                 </div>
             </div>
             <div class="row center-block">
                 <div class="col-xs-offset-1 col-xs-10">
-                    <textarea name="comment" id="comment" rows="8" placeholder="評価コメントを書いてください" class="form-control"></textarea>
-                    <p class="help-block">※500文字以内</p>
+                    <textarea name="good" id="good" rows="3" placeholder="良かった点を書いてください" class="form-control"></textarea>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11">
+                    <label for="good" class="control-label">期待外れだった点</label>
+                </div>
+            </div>
+            <div class="row center-block">
+                <div class="col-xs-offset-1 col-xs-10">
+                    <textarea name="bad" id="bad" rows="3" placeholder="期待外れだった点を書いてください" class="form-control"></textarea>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-11">
+                    <label for="comment" class="control-label">自由記入欄</label>
+                </div>
+            </div>
+            <div class="row center-block">
+                <div class="col-xs-offset-1 col-xs-10">
+                    <textarea name="comment" id="comment" rows="3" placeholder="自由な感想を書いてください" class="form-control"></textarea>
                 </div>
             </div><br>
             <div class="row text-center">
                 <div class="col-xs-12">
-                    <input type=submit id="feedbackTourist" class="btn btn-success" value="評価を送信する" onclick="payback()"></input>
+                    <input type=submit id="feedbackTourist" class="btn btn-success" value="フィードバックを送信する" onclick="payback()"></input>
                 </div>
             </div>
         </form>
