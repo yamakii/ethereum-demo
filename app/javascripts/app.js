@@ -32,7 +32,7 @@ function deposit() {
   console.log("Initiating transaction... (please wait)");
   tourium.deposit.sendTransaction('0x017ce96c3b8234c7de5e48aae50c2c74ef1086aa', {from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
-    setTimeout(function() { location.href='/contracted.html' } , 5000)
+    location.href='/contracted.html'
   }).catch(function(e) {
     console.log("Error sending coin; see log.");
   });
@@ -48,7 +48,7 @@ function payback() {
   console.log("Initiating transaction... (please wait)");
   tourium.payback.sendTransaction({from: account, gas: 300000}).then(function() {
     console.log("Transaction complete!");
-    setTimeout(function() { location.href='/thankyou.html' } , 5000)
+    location.href='/thankyou.html'
   }).catch(function(e) {
     console.log("Error sending coin; see log.");
   });
