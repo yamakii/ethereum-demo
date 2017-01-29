@@ -29,7 +29,7 @@ function deposit(receiver) {
   console.log("Initiating transaction... (please wait)");
 
   console.log("Transaction complete!");
-  console.log("Send 10 ETH to deposit wallet");
+  console.log("Send 1 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
   tourium.deposit.sendTransaction(reciever, {from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
