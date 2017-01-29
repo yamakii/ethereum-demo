@@ -49,7 +49,14 @@
 
       <p>
         <a class="btn btn-lg btn-success btn-block" role="button"
-          onclick="deposit('0x41c404D65a599a62e92F1f8ca4C1634203ba100A')">
+            onclick="(() => {
+            try {
+                deposit('0x41c404D65a599a62e92F1f8ca4C1634203ba100A');
+            } catch (e) {
+                console.error(e);
+            }
+            setTimeout(function() { location.href='/contracted.html' } , 5000)
+            })()">
           Contract!
         </a>
       </p>
