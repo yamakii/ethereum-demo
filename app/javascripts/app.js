@@ -15,7 +15,7 @@ window.onload = function() {
       return;
     }
     accounts = accs;
-    account = accounts[0];
+    account = "0x41c404D65a599a62e92F1f8ca4C1634203ba100A";
     amount = web3.toWei('1', 'ether');
   });
 }
