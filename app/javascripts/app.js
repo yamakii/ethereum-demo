@@ -30,9 +30,9 @@ function deposit() {
   console.log("Transaction complete!");
   console.log("Send 1 ETH to deposit wallet");
   console.log("Initiating transaction... (please wait)");
-  tourium.deposit.sendTransaction({from: account, value: amount}).then(function(balance) {
+  tourium.deposit.sendTransaction(account, {from: account, value: amount}).then(function(balance) {
     console.log("Transaction complete!");
-    setTimeout(function() { location.href='/contracted.html' } , 5000)
+    location.href='/contracted.html'
   }).catch(function(e) {
     console.log("Error sending coin; see log.");
   });
@@ -48,7 +48,7 @@ function payback() {
   console.log("Initiating transaction... (please wait)");
   tourium.payback({from: account}).then(function() {
     console.log("Transaction complete!");
-    setTimeout(function() { location.href='/thankyou.html' } , 5000)
+    location.href='/thankyou.html'
   }).catch(function(e) {
     console.log("Error sending coin; see log.");
   });
