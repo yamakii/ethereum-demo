@@ -37,30 +37,44 @@
         <br/>
         <h4>
             <div class="row">
+                <div class="col-xs-offset-1 col-xs-2">Tourist:</div>
+                <div class="col-xs-9">Bob</div>
+            </div><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-2">Guide:</div>
+                <div class="col-xs-9">Alice</div>
+            </div><br>
+            <div class="row">
                 <div class="col-xs-offset-1 col-xs-2">Time:</div>
                 <div class="col-xs-9">2017-01-01 12:00</div>
             </div><br>
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-2">Place:</div>
                 <div class="col-xs-9">Shibuya</div>
-            </div><br>
+            </div><br><br>
+            <div class="text-center">集合したら代表者はQRコードを照合してください</h3><br/>
         </h4>
         <div class="row text-center">
-            <div class="col-xs-12"><input type=submit id="read" class="btn btn-success" value="QRコードを読み込む" onclick="location.href='qr_read.html'"></input>
+            <div class="col-xs-12"><input type=submit id="read" class="btn btn-success" value="Read QR code" onclick="location.href='qr_read.html'"></input>
             </div>
         </div><br>
         <div class="row text-center">
-            <div class="col-xs-12"><input type=submit id="display" class="btn btn-success" value="QRコードを表示する" onclick="location.href='qr_display.html'"></input>
+            <div class="col-xs-12"><input type=submit id="display" class="btn btn-success" value="Display QR code" onclick="location.href='qr_display.html'"></input>
             </div>
         </div>
         <br/>
         <footer class="footer">
             <p>&copy; 2016 Tourium.jp</p>
         </footer>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                console.log("着いたボタン押下後、メールでこの画面のリンク先URLが届く");
+            };
+        </script>
 </body>
 
 </html>
