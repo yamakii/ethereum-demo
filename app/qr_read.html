@@ -34,7 +34,7 @@
         </div>
         <br/>
         <div class="row text-center">
-            <div class="col-xs-12"><input type=submit id="ok" class="btn btn-lg btn-success" value="OK" onclick="location.href='tour_met.html'"></input>
+            <div class="col-xs-12"><input type=submit id="ok" class="btn btn-lg btn-success" value="OK" onclick="redirect()"></input>
             </div>
         </div><br/>
         <footer class="footer">
@@ -44,6 +44,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function redirect() {
+            var count = 0;
+            var cookieString = document.cookie;
+            var cookieKeyArray = cookieString.split(";");
+            for (var i = 0; i < cookieKeyArray.length; i++) {　　
+                var targetCookie = cookieKeyArray[i];
+                targetCookie = targetCookie.replace(/^\s+|\s+$/g, "");
+                var valueIndex = targetCookie.indexOf("=");　　
+                if (targetCookie.substring(0, valueIndex) == "data1") {
+                    console.log(unescape(targetCookie.slice(valueIndex + 1)));　
+                    count = unescape(targetCookie.slice(valueIndex + 1));
+                }　
+            }
+            count++;
+            document.cookie = "data1=" + count;
+            window.location.href = "tour_met.html";
+        };
+    </script>
 </body>
 
 </html>

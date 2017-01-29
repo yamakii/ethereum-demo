@@ -52,6 +52,18 @@
                 <div class="col-xs-offset-1 col-xs-2">Place:</div>
                 <div class="col-xs-9">Shibuya</div>
             </div><br><br>
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-3">Members:</div>
+                <div class="col-xs-8">
+                    <div class="row">
+                        <ul>
+                            <li>Alice <input type="checkbox" id="alice" name="alice" checked="true" onclick="return false;" /></li>
+                            <li>Bob <input type="checkbox" id="bob" name="bob" onclick="return false;" /></li>
+                            <li>Charlie <input type="checkbox" id="charlie" name="charlie" onclick="return false;" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><br>
             <div class="text-center">集合したら代表者はQRコードを照合してください</h3><br/>
         </h4>
         <div class="row text-center">
@@ -74,7 +86,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script type="text/javascript">
             window.onload = function() {
-                console.log("着いたボタン押下後、メールでこの画面のリンク先URLが届く");
+                var count = 0;
+                var cookieString = document.cookie;
+                var cookieKeyArray = cookieString.split(";");
+                for (var i = 0; i < cookieKeyArray.length; i++) {　　
+                    var targetCookie = cookieKeyArray[i];
+                    targetCookie = targetCookie.replace(/^\s+|\s+$/g, "");
+                    var valueIndex = targetCookie.indexOf("=");　　
+                    if (targetCookie.substring(0, valueIndex) == "data1") {
+                        count = unescape(targetCookie.slice(valueIndex + 1));
+                    }　
+                }
+                if (count == 1) {
+                    $('input[name="bob"]').prop("checked", true);
+                }
+                if (count == 2) {
+                    $('input[name="bob"]').prop("checked", true);
+                    $('input[name="charlie"]').prop("checked", true);
+                }
+
             };
         </script>
 </body>
